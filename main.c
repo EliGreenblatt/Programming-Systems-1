@@ -49,5 +49,7 @@ int main()
     }
   }
 
+  printf("\n");
+
   return 1;
 }
