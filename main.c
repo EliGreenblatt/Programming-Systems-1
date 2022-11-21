@@ -6,8 +6,8 @@ int main()
   int num1 = 0;
   int num2 = 0;
 
-  scanf("%d" , &num1);
-  scanf("%d", &num2);
+  scanf("%d",&num1);
+  scanf("%d",&num2);
   
   printf("The Armstrong numbers are:");
   for (int i = num1; i < num2; i++)
