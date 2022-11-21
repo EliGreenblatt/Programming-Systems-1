@@ -19,9 +19,7 @@ int main()
       printf(" %d", i);
     }
   }
-  printf("\n");
-
-  printf("The Palindromes are:");
+  printf("\nThe Palindromes are:");
 
   for (int i = num1; i < num2; i++)
   {
@@ -32,10 +30,8 @@ int main()
     }
     
   }
-  printf("\n");
 
-
-  printf("The Prime numbers are:");
+  printf("\nThe Prime numbers are:");
   for (int i = num1; i < num2; i++)
   {
     if(isPrime(i) == 1)
@@ -44,9 +40,7 @@ int main()
     }
   }
 
-  printf("\n");
-
- printf("The Strong numbers are:");
+ printf("\nThe Strong numbers are:");
   for (int i = num1; i < num2; i++)
   {
     if(isStrong(i) == 1)
