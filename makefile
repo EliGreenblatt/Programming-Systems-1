@@ -18,13 +18,13 @@ PIC = -fPIC
 all: maindrec maindloop mains libclassloops.a main.o
 
 maindrec: $(MAIN) libclassrec.so
-	$(CC) $(FLAGS) main.c ./libclassrec.so -o maindrec
+	$(CC) $(FLAGS) main.o ./libclassrec.so -o maindrec
 	
 maindloop: main.o libclassloops.so
-	$(CC) $(FLAGS) main.c ./libclassloops.so -o maindloop
+	$(CC) $(FLAGS) main.o ./libclassloops.so -o maindloop
 
 mains: main.o libclassrec.a
-	$(CC) $(FLAGS) main.c libclassrec.a -o mains
+	$(CC) $(FLAGS) main.o libclassrec.a -o mains
 loops: libclassloops.a
 
 recursives: libclassrec.a
@@ -59,3 +59,5 @@ $(MAIN): main.c NumClass.h
 
 clean:
 	rm -f *.a *.so *.o maindloop maindrec mains
+
+.PHONY: clean all
