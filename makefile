@@ -18,10 +18,10 @@ PIC = -fPIC
 all: maindrec maindloop mains libclassloops.a main.o
 
 maindrec: $(MAIN) libclassrec.so
-	$(CC) $(FLAGS)  main.c ./libclassrec.so -o maindrec
+	$(CC) $(FLAGS) main.c ./libclassrec.so -o maindrec
 	
 maindloop: main.o libclassloops.so
-	$(CC) $(FLAGS)  main.c ./libclassloops.so -o maindloop
+	$(CC) $(FLAGS) main.c ./libclassloops.so -o maindloop
 
 mains: main.o libclassrec.a
 	$(CC) $(FLAGS) main.c libclassrec.a -o mains
@@ -34,10 +34,10 @@ recursived: libclassrec.so
 loopd: libclassloops.so
 
 libclassloops.so: $(BASE) $(LOOPS)
-	$(CC) $(FLAGS) -shared -o libclassloops.so $(BASE) $(LOOPS)
+	$(CC) $(FLAGS) $(PIC) -shared -o libclassloops.so $(BASE) $(LOOPS)
 
 libclassrec.so: $(BASE) $(RECURSION)
-	$(CC) $(FLAGS) -shared  -o libclassrec.so $(BASE) $(RECURSION)
+	$(CC) $(FLAGS) $(PIC) -shared  -o libclassrec.so $(BASE) $(RECURSION)
 
 libclassrec.a: $(BASE) $(RECURSION)
 	$(AR) libclassrec.a $(BASE) $(RECURSION)
