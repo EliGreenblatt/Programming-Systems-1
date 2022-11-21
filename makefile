@@ -18,10 +18,10 @@ PIC = -fPIC
 all: maindrec maindloop mains libclassloops.a
 
 maindrec: $(MAIN) libclassrec.so
-	$(CC) $(FLAGS) -o maindrec $(MAIN) libclassrec.so
+	$(CC) $(FLAGS)  main.c ./libclassrec.so -o maindrec
 	
 maindloop: main.o libclassloops.so
-	$(CC) $(FLAGS) -o maindloop $(MAIN) libclassloops.so
+	$(CC) $(FLAGS)  main.c ./libclassloops.so -o maindloop
 
 mains: main.o libclassrec.a
 	$(CC) $(FLAGS) main.c libclassrec.a -o mains
