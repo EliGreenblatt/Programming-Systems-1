@@ -24,7 +24,7 @@ maindloop: main.o libclassloops.so
 	$(CC) $(FLAGS) -o maindloop $(MAIN) libclassloops.so
 
 mains: main.o libclassrec.a
-
+	$(CC) $(FLAGS) main.c libclassrec.a -o mains
 loops: libclassloops.a
 
 recursives: libclassrec.a
