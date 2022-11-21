@@ -15,7 +15,7 @@ MAIN = main.o
 
 PIC = -fPIC
 
-all: maindrec maindloop mains libclassloops.a
+all: maindrec maindloop mains libclassloops.a main.o
 
 maindrec: $(MAIN) libclassrec.so
 	$(CC) $(FLAGS)  main.c ./libclassrec.so -o maindrec
