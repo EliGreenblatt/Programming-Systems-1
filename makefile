@@ -54,7 +54,7 @@ advancedClassificationLoop.o: advancedClassificationLoop.c
 advancedClassificationRecursion.o: advancedClassificationRecursion.c
 	$(CC) $(FLAGS) $(PIC) -c advancedClassificationRecursion.c
 
-$(MAIN): main.c NumClass.h
+main.o: main.c NumClass.h
 	$(CC) $(FLAGS) -c main.c
 
 clean:
