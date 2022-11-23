@@ -34,10 +34,10 @@ recursived: libclassrec.so
 loopd: libclassloops.so
 
 libclassloops.so: $(BASE) $(LOOPS)
-	$(CC) $(FLAGS) -shared -o libclassloops.so $(BASE) $(LOOPS)
+	$(CC) $(FLAGS) $(PIC) -shared -o libclassloops.so $(BASE) $(LOOPS)
 
 libclassrec.so: $(BASE) $(RECURSION)
-	$(CC) $(FLAGS) -shared  -o libclassrec.so $(BASE) $(RECURSION)
+	$(CC) $(FLAGS) $(PIC) -shared  -o libclassrec.so $(BASE) $(RECURSION)
 
 libclassrec.a: $(BASE) $(RECURSION)
 	$(AR) libclassrec.a $(BASE) $(RECURSION)
